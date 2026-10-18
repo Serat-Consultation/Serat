@@ -1,0 +1,2239 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071b35">
+  <meta name="description" content="صراط؛ همراه شما در مسیر برنامه‌ریزی درسی، مشاوره تحصیلی و انتخاب رشته.">
+  <title>صراط | گروه مشاوره تحصیلی و انتخاب رشته</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #071b35;
+      --navy-light: #102b4d;
+      --teal: #20c9bd;
+      --teal-dark: #109e98;
+      --gold: #e5bd73;
+      --white: #ffffff;
+      --text: #25364b;
+      --muted: #718096;
+      --background: #f5f8fb;
+      --border: #e5ebf2;
+      --shadow: 0 18px 55px rgba(7, 27, 53, 0.09);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      font-family: "Vazirmatn", Tahoma, sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.9;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 92px 0;
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--teal-dark);
+      background: rgba(32, 201, 189, 0.1);
+      padding: 5px 14px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .section-heading h2 {
+      color: var(--navy);
+      font-size: clamp(25px, 4vw, 37px);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 23px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 14px;
+      transition: transform 0.2s ease, background 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--teal);
+      color: var(--navy);
+      box-shadow: 0 9px 25px rgba(32, 201, 189, 0.18);
+    }
+
+    .btn-primary:hover {
+      background: #43d9ce;
+    }
+
+    .btn-outline {
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.28);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* نوار ناوبری */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(7, 27, 53, 0.97);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .navbar {
+      min-height: 132px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      flex-shrink: 0;
+    }
+
+    .brand-logo {
+      width: 125px;
+      height: 125px;
+      padding: 8px;
+      object-fit: contain;
+      flex-shrink: 0;
+      background: rgba(255, 255, 255, 0.97);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.13),
+                  0 8px 24px rgba(0,  0, 0, 0.18);
+    }
+
+    .brand-copy {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.6;
+    }
+
+    .brand-name {
+      color: var(--white);
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .brand-caption {
+      color: #a9c1d5;
+      font-size: 11px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-image-item {
+      display: none;
+    }
+
+    .nav-links a {
+      color: #d7e3ef;
+      font-size: 13px;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--teal);
+    }
+
+    .nav-cta {
+      white-space: nowrap;
+      padding: 10px 17px;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 12px;
+      background: transparent;
+      color: white;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    /* بخش معرفی */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: var(--white);
+      background:
+        radial-gradient(ellipse at 75% 20%, rgba(32, 201, 189, 0.12), transparent 35%),
+        radial-gradient(ellipse at 15% 80%, rgba(229, 189, 115, 0.08), transparent 30%),
+        linear-gradient(135deg, #071b35 0%, #0a2544 58%, #0c304d 100%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border: 1px solid rgba(32, 201, 189, 0.12);
+      border-radius: 50%;
+      top: -250px;
+      right: -120px;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.03fr 0.97fr;
+      align-items: center;
+      gap: 30px;
+      min-height: 590px;
+      padding-top: 48px;
+      padding-bottom: 48px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding-block: 15px;
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: #a4f0e9;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero-label::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: var(--gold);
+      border-radius: 10px;
+    }
+
+    .hero h1 {
+      font-size: clamp(35px, 4.5vw, 55px);
+      line-height: 1.5;
+      font-weight: 800;
+      letter-spacing: -1.4px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--teal);
+    }
+
+    .hero-description {
+      max-width: 560px;
+      color: #c0d0e0;
+      font-size: 15px;
+      line-height: 2.2;
+      margin-bottom: 29px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 30px;
+      color: #c2d2e0;
+      font-size: 12px;
+    }
+
+    .hero-points span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .hero-points span::before {
+      content: "✓";
+      display: inline-grid;
+      place-items: center;
+      width: 19px;
+      height: 19px;
+      border-radius: 50%;
+      background: rgba(32, 201, 189, 0.14);
+      color: var(--teal);
+      font-weight: 800;
+    }
+
+    .hero-art {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 470px;
+      isolation: isolate;
+      background:
+        radial-gradient(ellipse at center,
+          rgba(32, 201, 189, 0.15) 0%,
+          rgba(32, 201, 189, 0.07) 35%,
+          rgba(7, 27, 53, 0) 72%);
+    }
+
+    .hero-art::before {
+      content: "";
+      position: absolute;
+      width: 76%;
+      aspect-ratio: 1;
+      border: 1px solid rgba(229, 189, 115, 0.18);
+      border-radius: 50%;
+      z-index: -1;
+    }
+
+    .hero-art::after {
+      content: "";
+      position: absolute;
+      width: 60%;
+      aspect-ratio: 1;
+      border: 1px solid rgba(32, 201, 189, 0.14);
+      border-radius: 50%;
+      z-index: -1;
+    }
+
+    .hero-image {
+      position: relative;
+      z-index: 1;
+      width: 135%;
+      max-width: 650px;
+      height: 480px;
+      object-fit: contain;
+      object-position: center;
+      filter: drop-shadow(0 18px 32px rgba(0, 0, 0, 0.18));
+
+      /* محو تدریجی لبه‌های تصویر برای ترکیب با پس‌زمینه */
+      -webkit-mask-image: radial-gradient(
+        ellipse 69% 68% at 50% 50%,
+        #000 43%,
+        rgba(0, 0, 0, 0.92) 58%,
+        rgba(0, 0, 0, 0.58) 72%,
+        transparent 100%
+      );
+      mask-image: radial-gradient(
+        ellipse 69% 68% at 50% 50%,
+        #000 43%,
+        rgba(0, 0, 0, 0.92) 58%,
+        rgba(0, 0, 0, 0.58) 72%,
+        transparent 100%
+      );
+    }
+
+    /* نوار خدمات کوتاه */
+
+    .quick-info {
+      position: relative;
+      z-index: 5;
+      margin-top: -1px;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .quick-info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding-block: 24px;
+    }
+
+    .quick-item {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding-inline: 18px;
+    }
+
+    .quick-icon {
+      display: grid;
+      place-items: center;
+      width: 45px;
+      height: 45px;
+      flex-shrink: 0;
+      border-radius: 14px;
+      color: var(--teal-dark);
+      background: rgba(32, 201, 189, 0.11);
+      font-size: 21px;
+    }
+
+    .quick-item strong {
+      display: block;
+      color: var(--navy);
+      font-size: 14px;
+    }
+
+    .quick-item p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* خدمات */
+
+    .services {
+      background: var(--background);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      position: relative;
+      overflow: hidden;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 29px 25px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+      border-color: rgba(32, 201, 189, 0.45);
+    }
+
+    .service-number {
+      position: absolute;
+      top: 17px;
+      left: 20px;
+      color: #e8edf3;
+      font-size: 36px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .service-icon {
+      display: grid;
+      place-items: center;
+      width: 59px;
+      height: 59px;
+      background: linear-gradient(135deg, rgba(32, 201, 189, 0.16), rgba(32, 201, 189, 0.04));
+      color: var(--teal-dark);
+      border-radius: 17px;
+      font-size: 27px;
+      margin-bottom: 19px;
+    }
+
+    .service-card h3 {
+      color: var(--navy);
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 2.1;
+    }
+
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--teal-dark);
+      font-size: 13px;
+      font-weight: 700;
+      margin-top: 19px;
+    }
+
+    /* درباره صراط */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .about-visual {
+      position: relative;
+      min-height: 365px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 50% 45%, rgba(32, 201, 189, 0.14), transparent 55%),
+        linear-gradient(145deg, #0a2544, #071b35);
+    }
+
+    .about-visual::before,
+    .about-visual::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(229, 189, 115, 0.3);
+      border-radius: 50%;
+    }
+
+    .about-visual::before {
+      width: 260px;
+      height: 260px;
+    }
+
+    .about-visual::after {
+      width: 310px;
+      height: 310px;
+      border-color: rgba(32, 201, 189, 0.2);
+    }
+
+    .about-symbol {
+      position: relative;
+      z-index: 1;
+      color: var(--gold);
+      font-size: 100px;
+      font-weight: 800;
+      text-shadow: 0 0 45px rgba(229, 189, 115, 0.15);
+    }
+
+    .about-symbol-image {
+      position: relative;
+      z-index: 1;
+      width: min(88%, 400px);
+      height: 390px;
+      padding: 9px;
+      object-fit: contain;
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 24px;
+      box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.12),
+                  0 12px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .about-content .eyebrow {
+      margin-bottom: 14px;
+    }
+
+    .about-content h2 {
+      color: var(--navy);
+      font-size: clamp(26px, 3.5vw, 36px);
+      line-height: 1.7;
+      margin-bottom: 17px;
+    }
+
+    .about-content > p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 2.25;
+      margin-bottom: 22px;
+    }
+
+    .about-features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 13px;
+    }
+
+    .about-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 13px;
+      background: var(--background);
+      border-radius: 13px;
+      font-size: 13px;
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .about-feature span {
+      color: var(--teal-dark);
+      font-weight: 800;
+    }
+
+    /* آیه و شعار */
+
+    .quote-section {
+      padding: 65px 0;
+      color: white;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(32, 201, 189, 0.12), transparent 30%),
+        var(--navy);
+    }
+
+    .quote-card {
+      max-width: 900px;
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .quote-mark {
+      color: var(--gold);
+      font-size: 46px;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .quote-card blockquote {
+      font-size: clamp(23px, 4vw, 34px);
+      font-weight: 700;
+      line-height: 1.9;
+      margin-bottom: 15px;
+    }
+
+    .quote-translation {
+      color: #c0d0e0;
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .quote-reference {
+      color: var(--gold);
+      font-size: 12px;
+    }
+
+    /* مراحل همکاری */
+
+    .steps {
+      background: white;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .step-card {
+      position: relative;
+      text-align: center;
+      padding: 15px 12px;
+    }
+
+    .step-number {
+      display: grid;
+      place-items: center;
+      width: 66px;
+      height: 66px;
+      margin: 0 auto 19px;
+      border: 1px solid rgba(32, 201, 189, 0.3);
+      border-radius: 21px;
+      background: rgba(32, 201, 189, 0.1);
+      color: var(--teal-dark);
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .step-card h3 {
+      color: var(--navy);
+      font-size: 16px;
+      margin-bottom: 9px;
+    }
+
+    .step-card p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    /* اخبار */
+
+    .news-section {
+      background: var(--background);
+    }
+
+    .news-top {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .news-top .section-heading {
+      text-align: right;
+      margin: 0;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .news-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 220px;
+      padding: 24px;
+      border-radius: 19px;
+      background: white;
+      border: 1px solid var(--border);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .news-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .news-date {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--teal-dark);
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+
+    .news-card h3 {
+      color: var(--navy);
+      font-size: 17px;
+      line-height: 1.8;
+      margin-bottom: 10px;
+    }
+
+    .news-card p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 2.1;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    .news-status {
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+      padding: 25px;
+      background: white;
+      border-radius: 15px;
+      border: 1px dashed var(--border);
+      grid-column: 1 / -1;
+    }
+
+    /* پرسش‌های متداول */
+
+    .faq-list {
+      max-width: 850px;
+      margin-inline: auto;
+      display: grid;
+      gap: 13px;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: white;
+      overflow: hidden;
+    }
+
+    .faq-item summary {
+      position: relative;
+      cursor: pointer;
+      list-style: none;
+      padding: 19px 22px;
+      padding-left: 55px;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: "+";
+      position: absolute;
+      left: 22px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--teal-dark);
+      font-size: 23px;
+      font-weight: 400;
+    }
+
+    .faq-item[open] summary::after {
+      content: "−";
+    }
+
+    .faq-answer {
+      padding: 0 22px 20px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 2.2;
+    }
+
+    /* فرم ارتباط */
+
+    .contact-section {
+      background: var(--background);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .contact-info {
+      padding: 34px;
+      border-radius: 23px;
+      color: white;
+      background:
+        radial-gradient(circle at 10% 90%, rgba(32, 201, 189, 0.15), transparent 35%),
+        var(--navy);
+    }
+
+    .contact-info h2 {
+      font-size: 27px;
+      margin-bottom: 12px;
+    }
+
+    .contact-info > p {
+      color: #bfd0df;
+      font-size: 13px;
+      line-height: 2.2;
+      margin-bottom: 27px;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 19px;
+      font-size: 13px;
+      color: #e0e9f2;
+    }
+
+    .contact-detail span {
+      color: var(--teal);
+      font-size: 19px;
+    }
+
+    .contact-form {
+      background: white;
+      padding: 32px;
+      border: 1px solid var(--border);
+      border-radius: 23px;
+      box-shadow: 0 10px 35px rgba(7, 27, 53, 0.04);
+    }
+
+    .contact-form h3 {
+      color: var(--navy);
+      font-size: 21px;
+      margin-bottom: 7px;
+    }
+
+    .form-intro {
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 24px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 17px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .form-field.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-field label {
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+      min-width: 0;
+      padding: 12px 14px;
+      color: var(--text);
+      background: #fbfcfe;
+      border: 1px solid #dfe7ef;
+      border-radius: 11px;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-color: var(--teal-dark);
+      box-shadow: 0 0 0 3px rgba(32, 201, 189, 0.12);
+    }
+
+    .form-field input,
+    .form-field select {
+      min-height: 48px;
+    }
+
+    .form-field textarea {
+      min-height: 125px;
+      resize: vertical;
+    }
+
+    .contact-form .btn {
+      margin-top: 19px;
+    }
+
+
+    #formStatus[data-state="success"] { color: #167647; font-weight: 700; }
+    #formStatus[data-state="error"] { color: #b42318; font-weight: 700; }
+    #formStatus[data-state="loading"] { color: #34506f; }
+    .contact-form button:disabled { opacity: 0.7; cursor: wait; }
+
+    .form-note {
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 12px;
+      line-height: 1.9;
+    }
+
+    /* پاورقی */
+
+    .site-footer {
+      color: #c3d0dd;
+      background: #041326;
+      padding: 42px 0 20px;
+    }
+
+    .footer-main {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 35px;
+      padding-bottom: 30px;
+    }
+
+    .footer-brand {
+      max-width: 390px;
+    }
+
+    .footer-brand .brand {
+      margin-bottom: 15px;
+    }
+
+    .footer-brand p {
+      color: #91a6bb;
+      font-size: 12px;
+      line-height: 2.2;
+    }
+
+    .footer-links h3 {
+      color: white;
+      font-size: 14px;
+      margin-bottom: 13px;
+    }
+
+    .footer-links ul {
+      display: grid;
+      gap: 7px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      color: #9db0c3;
+      font-size: 12px;
+    }
+
+    .footer-links a:hover {
+      color: var(--teal);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.09);
+      padding-top: 17px;
+      color: #8195a9;
+      font-size: 11px;
+      text-align: center;
+    }
+
+    /* دکمه بازگشت به بالا */
+
+    .back-to-top {
+      position: fixed;
+      left: 20px;
+      bottom: 20px;
+      z-index: 900;
+      display: grid;
+      place-items: center;
+      width: 43px;
+      height: 43px;
+      color: var(--navy);
+      background: var(--teal);
+      border: 0;
+      border-radius: 14px;
+      font-size: 21px;
+      box-shadow: 0 8px 22px rgba(7, 27, 53, 0.2);
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: 0.2s ease;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    /* واکنش‌گرایی */
+
+    @media (max-width: 1000px) {
+      .nav-links {
+        gap: 15px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      .hero-grid {
+        gap: 12px;
+      }
+
+      .hero-image {
+        width: 125%;
+        max-width: 610px;
+        height: 440px;
+      }
+
+      .about-grid {
+        gap: 35px;
+      }
+
+      .contact-info,
+      .contact-form {
+        padding: 26px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .section {
+        padding: 70px 0;
+      }
+
+      .navbar {
+        min-height: 108px;
+      }
+
+      .brand-logo {
+        width: 92px;
+        height: 92px;
+        padding: 6px;
+        border-radius: 18px;
+      }
+
+      .brand-name {
+        font-size: 22px;
+      }
+
+      .menu-toggle {
+        display: grid;
+        place-items: center;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        display: none;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 20px 18px;
+        background: var(--navy);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 15px 20px rgba(0, 0, 0, 0.12);
+      }
+
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .nav-image-item {
+        display: flex;
+        justify-content: center;
+        padding: 12px 0 4px;
+      }
+
+      .nav-menu-image {
+        display: block;
+        width: auto;
+        height: auto;
+        max-width: min(100%, 190px);
+        max-height: 260px;
+        object-fit: contain;
+        border-radius: 12px;
+      }
+
+      .nav-links li a {
+        display: block;
+        padding: 12px 8px;
+        font-size: 14px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 10px;
+        padding-top: 40px;
+        padding-bottom: 35px;
+      }
+
+      .hero-content {
+        order: 1;
+      }
+
+      .hero-art {
+        order: 0;
+        min-height: 300px;
+      }
+
+      .hero-image {
+        width: 100%;
+        max-width: 470px;
+        height: 320px;
+      }
+
+      .hero-description {
+        margin-inline: auto;
+      }
+
+      .hero-actions,
+      .hero-points {
+        justify-content: center;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-visual {
+        min-height: 300px;
+      }
+
+      .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 30px;
+      }
+
+      .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .quick-info-grid {
+        gap: 12px;
+      }
+
+      .quick-item {
+        padding-inline: 4px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .container {
+        width: min(100% - 28px, 1160px);
+      }
+
+      .section {
+        padding: 57px 0;
+      }
+
+      .navbar {
+        min-height: 94px;
+      }
+
+      .brand {
+        gap: 9px;
+      }
+
+      .brand-logo {
+        width: 78px;
+        height: 78px;
+        padding: 5px;
+        border-radius: 16px;
+      }
+
+      .brand-name {
+        font-size: 20px;
+      }
+
+      .brand-caption {
+        font-size: 10px;
+      }
+
+      .hero-grid {
+        padding-top: 25px;
+      }
+
+      .hero-art {
+        min-height: 340px;
+      }
+
+      .hero-image {
+        width: 100%;
+        max-width: 470px;
+        height: 320px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero-description {
+        font-size: 13px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .hero-points {
+        gap: 10px 15px;
+        font-size: 11px;
+      }
+
+      .quick-info-grid {
+        grid-template-columns: 1fr;
+        gap: 17px;
+        padding-block: 22px;
+      }
+
+      .quick-item {
+        padding-inline: 7px;
+      }
+
+      .services-grid,
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        padding: 25px 22px;
+      }
+
+      .about-visual {
+        min-height: 255px;
+      }
+
+      .about-symbol {
+        font-size: 80px;
+      }
+
+      .about-symbol-image {
+        width: min(88%, 340px);
+        height: 300px;
+        padding: 7px;
+        border-radius: 22px;
+      }
+
+      .about-visual::before {
+        width: 210px;
+        height: 210px;
+      }
+
+      .about-visual::after {
+        width: 250px;
+        height: 250px;
+      }
+
+      .about-features {
+        grid-template-columns: 1fr;
+      }
+
+      .quote-section {
+        padding: 50px 0;
+      }
+
+      .steps-grid {
+        gap: 20px 8px;
+      }
+
+      .step-card {
+        padding-inline: 5px;
+      }
+
+      .step-card h3 {
+        font-size: 14px;
+      }
+
+      .step-card p {
+        font-size: 12px;
+      }
+
+      .news-top {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .news-top .section-heading {
+        text-align: center;
+        margin-inline: auto;
+      }
+
+      .contact-info,
+      .contact-form {
+        padding: 22px 18px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-field.full {
+        grid-column: auto;
+      }
+
+      .footer-main {
+        flex-direction: column;
+      }
+
+      .back-to-top {
+        left: 12px;
+        bottom: 12px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="navbar container" aria-label="منوی اصلی">
+      <a class="brand" href="#home" aria-label="صفحه اصلی صراط">
+        <img
+          src="./logo.png.png"
+          alt="لوگوی صراط"
+          class="brand-logo"
+          width="100"
+          height="100"
+        >
+        <span class="brand-copy">
+          <span class="brand-name">صراط</span>
+          <span class="brand-caption">همراه شما در مسیر آینده</span>
+        </span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="باز کردن منو"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >☰</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">صفحه اصلی</a></li>
+        <li><a href="#services">خدمات ما</a></li>
+        <li><a href="#about">درباره صراط</a></li>
+        <li><a href="#steps">شیوه مشاوره</a></li>
+        <li><a href="#news">اخبار</a></li>
+        <li><a href="#faq">پرسش‌های متداول</a></li>
+        <li><a href="#contact">ارتباط با ما</a></li>
+        <li class="nav-image-item">
+          <img
+            src="./masir.png.png"
+            alt="مسیر صراط"
+            class="nav-menu-image"
+            width="768"
+            height="2048"
+            loading="lazy"
+          >
+        </li>
+      </ul>
+
+      <a href="#contact" class="btn btn-primary nav-cta">شروع مشاوره ←</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-label">گروه مشاوره تحصیلی و انتخاب رشته صراط</div>
+
+          <h1>
+            آینده‌ات را<br>
+            با <span>آگاهی و برنامه</span> بساز
+          </h1>
+
+          <p class="hero-description">
+            در مسیر تحصیل و انتخاب رشته تنها نیستی. صراط همراه توست تا
+            با شناخت بهتر توانایی‌ها، برنامه‌ریزی اصولی و انتخاب آگاهانه،
+            قدم‌های مطمئن‌تری به سوی آینده‌ات برداری.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#services" class="btn btn-primary">آشنایی با خدمات ←</a>
+            <a href="#contact" class="btn btn-outline">درخواست مشاوره</a>
+          </div>
+
+          <div class="hero-points">
+            <span>مشاوره آنلاین</span>
+            <span>برنامه‌ریزی درسی</span>
+            <span>انتخاب رشته آگاهانه</span>
+          </div>
+        </div>
+
+        <div class="hero-art">
+          <img
+            src="./meno.png.png"
+            alt="تصویر معرفی صراط"
+            class="hero-image"
+            width="650"
+            height="480"
+            fetchpriority="high"
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="quick-info" aria-label="ویژگی‌های صراط">
+      <div class="container quick-info-grid">
+        <div class="quick-item">
+          <div class="quick-icon" aria-hidden="true">◎</div>
+          <div>
+            <strong>مسیر متناسب با تو</strong>
+            <p>توجه به شرایط و اهداف هر دانش‌آموز</p>
+          </div>
+        </div>
+
+        <div class="quick-item">
+          <div class="quick-icon" aria-hidden="true">✦</div>
+          <div>
+            <strong>برنامه‌ریزی هدفمند</strong>
+            <p>حرکت مرحله‌به‌مرحله به سوی هدف</p>
+          </div>
+        </div>
+
+        <div class="quick-item">
+          <div class="quick-icon" aria-hidden="true">⌘</div>
+          <div>
+            <strong>پیگیری منظم</strong>
+            <p>پیگیری صحیح و پشتیبانی دقیق</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">خدمات صراط</span>
+          <h2>برای هر قدم، یک مسیر روشن‌تر</h2>
+          <p>
+            خدمات ما برای کمک به تصمیم‌گیری بهتر، مدیریت زمان و شناخت
+            مسیرهای تحصیلی طراحی شده‌اند.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <span class="service-number">۰۱</span>
+            <div class="service-icon" aria-hidden="true">▤</div>
+            <h3>برنامه‌ریزی درسی</h3>
+            <p>
+              تنظیم برنامه‌ای منظم و واقع‌بینانه بر اساس زمان، شرایط
+              تحصیلی، نقاط قوت و نیازهای آموزشی دانش‌آموز.
+            </p>
+            <a href="#contact" class="service-link">درخواست مشاوره <span>←</span></a>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">۰۲</span>
+            <div class="service-icon" aria-hidden="true">◎</div>
+            <h3>مشاوره کنکور</h3>
+            <p>
+              کمک به طراحی مسیر مطالعه، پیگیری روند پیشرفت و بهبود
+              روش‌های یادگیری در دوران آمادگی برای کنکور.
+            </p>
+            <a href="#contact" class="service-link">درخواست مشاوره <span>←</span></a>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">۰۳</span>
+            <div class="service-icon" aria-hidden="true">⌖</div>
+            <h3>انتخاب رشته</h3>
+            <p>
+              بررسی علاقه‌ها، توانایی‌ها، شرایط تحصیلی و اطلاعات رشته‌ها
+              برای تصمیم‌گیری آگاهانه‌تر درباره آینده.
+            </p>
+            <a href="#contact" class="service-link">درخواست مشاوره <span>←</span></a>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">۰۴</span>
+            <div class="service-icon" aria-hidden="true">◷</div>
+            <h3>مدیریت زمان</h3>
+            <p>
+              یادگیری روش‌های اولویت‌بندی درس‌ها، تقسیم زمان و ایجاد
+              تعادل میان مطالعه، استراحت و فعالیت‌های روزانه.
+            </p>
+            <a href="#contact" class="service-link">درخواست مشاوره <span>←</span></a>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">۰۵</span>
+            <div class="service-icon" aria-hidden="true">⌕</div>
+            <h3>شناخت رشته‌ها و مشاغل</h3>
+            <p>
+              آشنایی با محتوای رشته‌های دانشگاهی، مسیر ادامه تحصیل
+              و فرصت‌های شغلی مرتبط با هر رشته.
+            </p>
+            <a href="#contact" class="service-link">درخواست مشاوره <span>←</span></a>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">۰۶</span>
+            <div class="service-icon" aria-hidden="true">↗</div>
+            <h3>پیگیری و ارزیابی پیشرفت</h3>
+            <p>
+              بررسی منظم عملکرد و اصلاح برنامه بر اساس نتایج، تغییر
+              شرایط و هدف‌های جدید دانش‌آموز.
+            </p>
+            <a href="#contact" class="service-link">درخواست مشاوره <span>←</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-visual" aria-label="mored.png.png">
+          <img
+            src="./mored.png.png"
+            alt="نشان صراط"
+            class="about-symbol-image"
+            width="360"
+            height="350"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="about-content">
+          <span class="eyebrow">درباره گروه صراط</span>
+          <h2>قرار نیست مسیرت را حدس بزنی؛ آن را آگاهانه انتخاب کن.</h2>
+          <p>
+            صراط با این نگاه شکل گرفته است که پیشرفت تحصیلی فقط به
+            ساعت مطالعه وابسته نیست؛ شناخت درست، هدف‌گذاری، روش مطالعه
+            مناسب و انتخاب آگاهانه نیز نقش مهمی دارند. هدف ما فراهم‌کردن
+            فضایی آنلاین برای دریافت راهنمایی تحصیلی و شناخت بهتر
+            فرصت‌های پیش روست.
+          </p>
+
+          <div class="about-features">
+            <div class="about-feature"><span>✓</span> توجه به هدف‌های فردی</div>
+            <div class="about-feature"><span>✓</span> برنامه‌ریزی واقع‌بینانه</div>
+            <div class="about-feature"><span>✓</span> شناخت مسیرهای تحصیلی</div>
+            <div class="about-feature"><span>✓</span> امکان ارتباط آنلاین</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-section">
+      <div class="container">
+        <div class="quote-card">
+          <div class="quote-mark" aria-hidden="true">❝</div>
+          <blockquote>وَأَنْ لَيْسَ لِلْإِنْسَانِ إِلَّا مَا سَعَى</blockquote>
+          <p class="quote-translation">
+            و اینکه برای انسان جز حاصل تلاش او نیست.
+          </p>
+          <div class="quote-reference">سوره نجم، آیه ۳۹</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section steps" id="steps">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">شیوه مشاوره</span>
+          <h2>شروع مسیر با چند قدم ساده</h2>
+          <p>
+            از بیان نیازت تا تنظیم مسیر مناسب، قدم‌به‌قدم پیش می‌رویم.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+          <article class="step-card">
+            <div class="step-number">۱</div>
+            <h3>ثبت درخواست مشاوره</h3>
+            <p>فرم ارتباط را تکمیل کن و موضوع موردنظرت را بنویس.</p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-number">۲</div>
+            <h3>بررسی شرایط</h3>
+            <p>نیازها، هدف‌ها و شرایط تحصیلی تو بررسی می‌شود.</p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-number">۳</div>
+            <h3>تعیین مسیر</h3>
+            <p>خدمات مناسب و مراحل پیشنهادی برایت مشخص می‌شود.</p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-number">۴</div>
+            <h3>شروع همکاری</h3>
+            <p>پس از هماهنگی، فرایند مشاوره و پیگیری آغاز می‌شود.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section news-section" id="news">
+      <div class="container">
+        <div class="news-top">
+          <div class="section-heading">
+            <span class="eyebrow">تازه‌های صراط</span>
+            <h2>اخبار و اطلاعیه‌ها</h2>
+            <p>آخرین اطلاعیه‌ها و مطالب آموزشی گروه صراط را دنبال کن.</p>
+          </div>
+
+          <a href="#contact" class="btn btn-primary">ارتباط با صراط ←</a>
+        </div>
+
+        <div class="news-grid" id="newsGrid" aria-live="polite">
+          <div class="news-status">در حال دریافت اطلاعیه‌ها...</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">پرسش‌های متداول</span>
+          <h2>پاسخ پرسش‌های شما</h2>
+          <p>اگر پرسش دیگری داری، از طریق فرم ارتباط با ما در میان بگذار.</p>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>آیا خدمات صراط به‌صورت آنلاین ارائه می‌شود؟</summary>
+            <div class="faq-answer">
+              بله، هدف این مجموعه ارائه خدمات به‌صورت آنلاین است. شیوه
+              دقیق ارتباط و دریافت خدمات پس از ثبت درخواست به شما اعلام می‌شود.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>آیا دانش‌آموزان پایه‌های مختلف می‌توانند درخواست بدهند؟</summary>
+            <div class="faq-answer">
+              درخواست خود را همراه با پایه تحصیلی و موضوع موردنظرتان ثبت کنید
+              تا امکان ارائه خدمت متناسب با شرایط شما بررسی شود.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>برای انتخاب رشته چه اطلاعاتی لازم است؟</summary>
+            <div class="faq-answer">
+              پایه تحصیلی، گروه آزمایشی، علاقه‌ها، شرایط و هدف‌های شما
+              می‌توانند در بررسی مسیرهای تحصیلی کمک‌کننده باشند. جزئیات
+              لازم با توجه به نوع درخواست مشخص می‌شود.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>هزینه خدمات چگونه مشخص می‌شود؟</summary>
+            <div class="faq-answer">
+              هزینه و شرایط هر خدمت باید پیش از شروع همکاری به‌صورت شفاف
+              اعلام شود. برای دریافت اطلاعات، فرم ارتباط را ارسال کنید.
+            </div>
+          </details>
+        </div>
+        <div class="faq-more-action" style="text-align:center; margin-top:28px;">
+          <a href="./faq.html" class="btn btn-primary">مشاهده پرسش‌های بیشتر ←</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">ارتباط با ما</span>
+          <h2>برای شروع مسیرت پیام بده</h2>
+          <p>
+            اطلاعات زیر را وارد کن تا درخواستت برای بررسی ارسال شود.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <aside class="contact-info">
+            <h2>در کنار تو هستیم</h2>
+            <p>
+              اگر درباره برنامه‌ریزی درسی، کنکور، انتخاب رشته یا خدمات
+              صراط پرسشی داری، درخواستت را برای ما ارسال کن.
+            </p>
+
+            <div class="contact-detail">
+              <span aria-hidden="true">⌘</span>
+              <div>
+                <strong>نحوه ارائه خدمات</strong><br>
+                آنلاین و از راه دور
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <span aria-hidden="true">◷</span>
+              <div>
+                <strong>زمان پاسخ‌گویی</strong><br>
+                پس از بررسی درخواست، با شما هماهنگ می‌شود.
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <span aria-hidden="true">✉</span>
+              <div>
+                <strong>موضوع درخواست</strong><br>
+                مشاوره تحصیلی، کنکور و انتخاب رشته
+              </div>
+            </div>
+          </aside>
+
+          <form
+            class="contact-form"
+            id="contactForm"
+            action="https://formspree.io/f/xnpjrqea"
+            method="POST"
+          >
+            <h3>فرم درخواست مشاوره</h3>
+            <p class="form-intro">
+              فیلدهای ستاره‌دار را تکمیل کن.
+            </p>
+
+            <input type="hidden" name="_subject" value="درخواست جدید از وب‌سایت صراط">
+
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="fullName">نام و نام خانوادگی *</label>
+                <input
+                  id="fullName"
+                  name="نام و نام خانوادگی"
+                  type="text"
+                  autocomplete="name"
+                  maxlength="100"
+                  pattern="[آ-ی‌\s]+"
+                  title="نام و نام خانوادگی را فقط با حروف فارسی وارد کنید."
+                  required
+                  placeholder="نام شما"
+                >
+              </div>
+
+              <div class="form-field">
+                <label for="phone">شماره تماس *</label>
+                <input
+                  id="phone"
+                  name="شماره تماس"
+                  type="tel"
+                  inputmode="numeric"
+                  autocomplete="tel"
+                  maxlength="11"
+                  minlength="11"
+                  pattern="09[0-9]{9}"
+                  title="شماره همراه باید دقیقاً ۱۱ رقم و با ۰۹ شروع شود."
+                  required
+                  placeholder="جهت ارتباط گیری شماره صحیح وارد کنید"
+                >
+              </div>
+
+              <div class="form-field">
+                <label for="province">استان *</label>
+                <input
+                  id="province"
+                  name="استان"
+                  type="text"
+                  autocomplete="address-level1"
+                  maxlength="60"
+                  required
+                  placeholder="استان محل سکونت"
+                >
+              </div>
+
+              <div class="form-field">
+                <label for="city">شهر *</label>
+                <input
+                  id="city"
+                  name="شهر"
+                  type="text"
+                  autocomplete="address-level2"
+                  maxlength="60"
+                  required
+                  placeholder="شهر محل سکونت"
+                >
+              </div>
+
+              <div class="form-field">
+                <label for="grade">پایه تحصیلی</label>
+                <select id="grade" name="پایه تحصیلی">
+                  <option value="">انتخاب کنید</option>
+                  <option>متوسطه اول</option>
+                  <option>دهم-انسانی</option>
+                  <option>یازدهم-انسانی</option>
+                  <option>دوازدهم-انسانی</option>
+                  <option>دهم-تجربی</option>
+                  <option>یازدهم-تجربی</option>
+                  <option>دوازدهم-تجربی</option>
+                  <option>دهم-ریاضی</option>
+                  <option>یازدهم-ریاضی</option>
+                  <option>دوازدهم-ریاضی</option>
+                  <option>پشت‌کنکوری</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="service">خدمت موردنظر *</label>
+                <select id="service" name="خدمت موردنظر" required>
+                  <option value="">انتخاب کنید</option>
+                  <option>برنامه‌ریزی درسی</option>
+                  <option>مشاوره کنکور</option>
+                  <option>انتخاب رشته</option>
+                  <option>هدایت تحصیلی</option>
+                  <option>مشاوره تحصیلی</option>
+                  <option>انتقاد و پیشنهاد</option>
+                  <option>سایر</option>
+                </select>
+              </div>
+
+              <div class="form-field full">
+                <label for="message">توضیحات و پرسش شما</label>
+                <textarea
+                  id="message"
+                  name="توضیحات"
+                  maxlength="5000"
+                  placeholder="موضوع درخواست یا پرسشت را بنویس..."
+                ></textarea>
+              </div>
+            </div>
+
+            <button class="btn btn-primary" type="submit">
+              ارسال درخواست ←
+            </button>
+
+            <p class="form-note" id="formStatus" role="status" aria-live="polite">
+              با ارسال فرم، اطلاعات واردشده برای رسیدگی به درخواست شما
+              ارسال می‌شود. .
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a class="brand" href="#home">
+            <img
+              src="./ahkar.png.png"
+              alt="لوگوی صراط"
+              class="brand-logo"
+              width="100"
+              height="100"
+              loading="lazy"
+            >
+            <span class="brand-copy">
+              <span class="brand-name">صراط</span>
+              <span class="brand-caption">همراه شما در مسیر آینده</span>
+            </span>
+          </a>
+          <p>
+            گروه مشاوره تحصیلی و انتخاب رشته صراط؛ همراه دانش‌آموزان
+            در مسیر شناخت توانایی‌ها، برنامه‌ریزی و تصمیم‌گیری آگاهانه.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h3>دسترسی سریع</h3>
+          <ul>
+            <li><a href="#services">خدمات ما</a></li>
+            <li><a href="#about">درباره صراط</a></li>
+            <li><a href="#steps">نحوه همکاری</a></li>
+            <li><a href="#news">اخبار و اطلاعیه‌ها</a></li>
+            <li><a href="#contact">ارتباط با ما</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © <span id="currentYear"></span> گروه مشاوره تحصیلی صراط؛ تمامی حقوق محفوظ است.
+      </div>
+    </div>
+  </footer>
+
+  <button
+    class="back-to-top"
+    id="backToTop"
+    type="button"
+    aria-label="بازگشت به بالای صفحه"
+    title="بازگشت به بالا"
+  >↑</button>
+
+  <script>
+    "use strict";
+
+    // منوی موبایل
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "بستن منو" : "باز کردن منو"
+      );
+      menuToggle.textContent = isOpen ? "×" : "☰";
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "باز کردن منو");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    document.addEventListener("click", (event) => {
+      if (
+        navLinks.classList.contains("open") &&
+        !navLinks.contains(event.target) &&
+        !menuToggle.contains(event.target)
+      ) {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "باز کردن منو");
+        menuToggle.textContent = "☰";
+      }
+    });
+
+    // سال جاری در پاورقی
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+
+    // دکمه بازگشت به بالا
+    const backToTop = document.getElementById("backToTop");
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        backToTop.classList.toggle("visible", window.scrollY > 450);
+      },
+      { passive: true }
+    );
+
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+
+    // اعتبارسنجی و ارسال فرم بدون خروج از سایت
+    const contactForm = document.getElementById("contactForm");
+    const formStatus = document.getElementById("formStatus");
+    const fullNameInput = document.getElementById("fullName");
+    const phoneInput = document.getElementById("phone");
+
+    function toEnglishDigits(value) {
+      return value
+        .replace(/[۰-۹]/g, (digit) => String("۰۱۲۳۴۵۶۷۸۹".indexOf(digit)))
+        .replace(/[٠-٩]/g, (digit) => String("٠١٢٣٤٥٦٧٨٩".indexOf(digit)));
+    }
+
+    fullNameInput.addEventListener("input", () => {
+      const original = fullNameInput.value;
+      const filtered = original.replace(/[^آ-ی‌\s]/g, "");
+      if (original !== filtered) fullNameInput.value = filtered;
+      fullNameInput.setCustomValidity(
+        /^[آ-ی‌\s]+$/.test(fullNameInput.value.trim())
+          ? ""
+          : "نام و نام خانوادگی را فقط با حروف فارسی وارد کنید."
+      );
+    });
+
+    phoneInput.addEventListener("input", () => {
+      const digits = toEnglishDigits(phoneInput.value).replace(/\D/g, "").slice(0, 11);
+      phoneInput.value = digits;
+      phoneInput.setCustomValidity(
+        /^09\d{9}$/.test(digits) || digits.length === 0
+          ? ""
+          : "شماره همراه باید دقیقاً ۱۱ رقم و با ۰۹ شروع شود."
+      );
+    });
+
+    contactForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (!contactForm.reportValidity()) return;
+
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      const originalButtonText = submitButton.textContent;
+      submitButton.disabled = true;
+      submitButton.textContent = "در حال ارسال…";
+      formStatus.textContent = "درخواست شما در حال ارسال است…";
+      formStatus.dataset.state = "loading";
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          body: new FormData(contactForm),
+          headers: { Accept: "application/json" }
+        });
+
+        if (!response.ok) {
+          let detail = "";
+          try {
+            const result = await response.json();
+            detail = result.errors?.map((item) => item.message).join(" ") || "";
+          } catch (_) {}
+          throw new Error(detail || "ارسال درخواست موفق نبود. لطفاً دوباره تلاش کنید.");
+        }
+
+        formStatus.textContent = "درخواست شما با موفقیت ارسال شد. همین صفحه را می‌توانید باز نگه دارید؛ اطلاعات در سامانه دریافت فرم ثبت می‌شود.";
+        formStatus.dataset.state = "success";
+        contactForm.reset();
+        fullNameInput.setCustomValidity("");
+        phoneInput.setCustomValidity("");
+      } catch (error) {
+        formStatus.textContent = error.message || "ارسال درخواست ممکن نشد. اتصال اینترنت را بررسی و دوباره تلاش کنید.";
+        formStatus.dataset.state = "error";
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+      }
+    });
+
+        // نمایش امن اخبار از فایل news.json
+    const newsGrid = document.getElementById("newsGrid");
+    const NEWS_URL = "./news.json";
+
+    function createNewsCard(item) {
+      const article = document.createElement("article");
+      article.className = "news-card";
+
+      const date = document.createElement("div");
+      date.className = "news-date";
+      date.textContent = formatDate(item.date);
+
+      const title = document.createElement("h3");
+      title.textContent = item.title || "اطلاعیه صراط";
+
+      const paragraph = document.createElement("p");
+      paragraph.textContent = item.text || item.description || "";
+
+      article.append(date, title, paragraph);
+      return article;
+    }
+
+    function formatDate(value) {
+      if (!value) return "اطلاعیه صراط";
+
+      const parsed = new Date(value);
+
+      if (Number.isNaN(parsed.getTime())) {
+        return String(value);
+      }
+
+      try {
+        return new Intl.DateTimeFormat("fa-IR", {
+          year: "numeric",
+          month: "long",
+          day: "numeric"
+        }).format(parsed);
+      } catch {
+        return parsed.toLocaleDateString();
+      }
+    }
+
+    async function loadNews() {
+      try {
+        const response = await fetch(NEWS_URL, {
+          cache: "no-store",
+          headers: { Accept: "application/json" }
+        });
+
+        if (!response.ok) {
+          throw new Error("دریافت اخبار ناموفق بود.");
+        }
+
+        const data = await response.json();
+
+        if (!Array.isArray(data) || data.length === 0) {
+          newsGrid.replaceChildren();
+
+          const empty = document.createElement("div");
+          empty.className = "news-status";
+          empty.textContent = "در حال حاضر اطلاعیه‌ای برای نمایش وجود ندارد.";
+          newsGrid.appendChild(empty);
+          return;
+        }
+
+        const fragment = document.createDocumentFragment();
+
+        data.slice(0, 12).forEach((item) => {
+          if (!item || typeof item !== "object") return;
+          fragment.appendChild(createNewsCard(item));
+        });
+
+        if (!fragment.childNodes.length) {
+          throw new Error("قالب اخبار معتبر نیست.");
+        }
+
+        newsGrid.replaceChildren(fragment);
+      } catch (error) {
+        newsGrid.replaceChildren();
+
+        const message = document.createElement("div");
+        message.className = "news-status";
+        message.textContent =
+          "نمایش اخبار ممکن نیست. لطفاً بعداً دوباره مراجعه کنید.";
+
+        newsGrid.appendChild(message);
+        console.error("News loading error:", error);
+      }
+    }
+
+    loadNews();
+    window.setInterval(loadNews, 60000);
+  </script>
+</body>
+</html>
