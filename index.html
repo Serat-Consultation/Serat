@@ -1052,6 +1052,47 @@
       text-align: center;
     }
 
+
+    /* فقط چیدمان آیکون‌های شبکه‌های اجتماعی در فوتر */
+    .footer-social-area {
+      text-align: center;
+      min-width: 0;
+    }
+
+    .footer-socials {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: nowrap;
+      direction: ltr;
+    }
+
+    .footer-socials .contact-social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 62px;
+      width: 62px;
+      height: 62px;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      padding: 0;
+    }
+
+    .footer-socials .contact-social-link img {
+      display: block;
+      width: 62px;
+      height: 62px;
+      object-fit: contain;
+    }
+
+    .footer-social-heading {
+      margin-top: 12px;
+    }
+
     /* دکمه بازگشت به بالا */
 
     .back-to-top {
@@ -1992,6 +2033,21 @@
             <li><a href="#news">اخبار و اطلاعیه‌ها</a></li>
             <li><a href="#contact">ارتباط با ما</a></li>
           </ul>
+        </div>
+
+        <div class="footer-social-area">
+          <div class="footer-socials" aria-label="شبکه‌های اجتماعی صراط">
+            <a class="contact-social-link" href="https://t.me/serat_ir0" target="_blank" rel="noopener noreferrer" aria-label="کانال صراط در تلگرام" title="تلگرام">
+              <img src="./tel.png" alt="تلگرام" width="62" height="62" loading="lazy">
+            </a>
+            <a class="contact-social-link" href="https://eitaa.com/serat_ir0" target="_blank" rel="noopener noreferrer" aria-label="کانال صراط در ایتا" title="ایتا">
+              <img src="./ita.png" alt="ایتا" width="62" height="62" loading="lazy">
+            </a>
+            <a class="contact-social-link" href="https://rubika.ir/serat_ir0" target="_blank" rel="noopener noreferrer" aria-label="کانال صراط در روبیکا" title="روبیکا">
+              <img src="./robik.png" alt="روبیکا" width="62" height="62" loading="lazy">
+            </a>
+          </div>
+          <p class="footer-social-heading">ما را در شبکه‌های اجتماعی دنبال کنید</p>
         </div>
       </div>
 
